@@ -1,11 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Audiowide&family=Baloo+2:wght@400;500;600;700;800&family=Jaldi:wght@400;700&family=Racing+Sans+One&family=Sora:wght@200;300;400;500;600;700;800&display=swap");
+
 * {
   box-sizing: border-box;
 }
+:root {
+  --border-empty: #e1e1e1;
+  --border-fill: #3498db;
+}
 body {
+  font-family: "Baloo 2", "sans-serf";
   height: 100vh;
   overflow: hidden;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+.container {
+  width: 200px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.progress-steps {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+.progress-bar {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  height: 4px;
+  width: 0%;
+  background-color: var(--border-fill);
+  z-index: -1;
+}
+.progress-steps::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  height: 4px;
+  width: 100%;
+  background-color: var(--border-empty);
+  z-index: -2;
+}
+.circle {
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 3px solid var(--border-empty);
+  font-weight: b;
+}
+.circle.active {
+  border-color: var(--border-fill);
+}
+button {
+  margin: 10px;
+  padding: 5px 10px;
+  background-color: var(--border-fill);
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 300ms;
+}
+button:disabled {
+  background-color: var(--border-empty);
+  cursor: not-allowed;
+}
+button:active {
+  transform: scale(98%);
+  background-color: #2e8fd0;
 }
