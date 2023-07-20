@@ -16,7 +16,8 @@ body {
   align-items: center;
 }
 .container {
-  width: 200px;
+  width: 90%;
+  max-width: 400px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -37,6 +38,7 @@ body {
   width: 0%;
   background-color: var(--border-fill);
   z-index: -1;
+  transition: width 300ms;
 }
 .progress-steps::before {
   content: "";
@@ -59,13 +61,14 @@ body {
   border-radius: 50%;
   border: 3px solid var(--border-empty);
   font-weight: b;
+  transition: border-color 300ms;
 }
 .circle.active {
   border-color: var(--border-fill);
 }
 button {
-  margin: 10px;
-  padding: 5px 10px;
+  margin: 15px 10px;
+  padding: 7px 15px;
   background-color: var(--border-fill);
   border: none;
   border-radius: 5px;
